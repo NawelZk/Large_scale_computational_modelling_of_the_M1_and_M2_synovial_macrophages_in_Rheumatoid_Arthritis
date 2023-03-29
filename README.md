@@ -10,16 +10,19 @@
 
 1. Molecular_interaction_maps_XML_format folder: contains the XML files of the molecular interaction maps used to generate the corresponding Boolean models using CaSQ. RA_M1_macrophage.xml corresponds to the rheumatoid arthritis M1 macrophage cell type. RA_M2_macrophage.xml corresponds to the rheumatoid arthritis M2 macrophage cell type
 
-2. GSE97779_dataset_analysis folder: contains four files 
+The XML files are converted to JSON files using the following command `casq -b -g 1 $XML_file_name $JSON_file_name`
+
+2. GSE97779_dataset_analysis folder: contains the script and files used to analyse the GSE97779 RNA-seq dataset  
 - GSE97779_series_matrix, the gene expression matrix of the GSE97779 GEO dataset. 
-- GPL570-55999.txt, a text file that was used to annotate the genes
+- GPL570-55999.txt,a text file that was used to annotate the genes
 - GSE97779_DEA.R, the R script used to perform differential expression analysis on GSE97779 dataset
-- DEG_macrophage.xlsx, the resulting differentially expressed genes from the DEG_macrophage
+- DEG_macrophage.xlsx, the resulting differentially expressed genes from the GSE97779 dataset
 
 3. Extract_nodes_upstream_phenotype_of_interest : The folder comprises all the files and scripts used to extract nodes that are upstrem of the phenotypes of interest in both RA_M1_macrophage and RA_M2_macrophage models. 
 
 - M1_model_export_upstream_phenotype_of_interest.sbml and M2_model_export_upstream_phenotype_of_interest.sbml are the SBML files that correspond to the submodules upstream of the phenotypes of interest in both RA M1 macrophage and RA M2 macrophage models respectively.
-Both files were generated using CaSQ export option.
+Both files were generated using CaSQ export option using the following command 
+`casq $XML_file_name -u phenotypes of interest`
 - M1_macrophage_all_nodes_in_json.csv and M2_macrophage_all_nodes_in_json.csv correspond to the list of all the nodes present in the RA M1 macrophage and RA M2 macrophage models respectively in the JSON format.
 - Extract_nodes_upstream_phenotypes_of_interest.py is the Python file used to extract the nodes that are upstrem of the phenotypes of interest in both RA_M1_macrophage and RA_M2_macrophage models. 
 - M1_macrophage_nodes_upstream_phenotypes_in_json.csv and M2_macrophage_nodes_upstream_phenotypes_in_json.csv are the resulting files from the extraction process performed using Extract_nodes_upstream_phenotypes_of_interest.py file. They contain the list of nodes that are upstrem of the phenotypes of interest in both RA_M1_macrophage and RA_M2_macrophage models respectively in the JSON format.
