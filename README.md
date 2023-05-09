@@ -8,12 +8,12 @@
 
 - This folder consists of:
 
-1. Molecular_interaction_maps_XML_format folder: contains the XML files of the molecular interaction maps used to generate the corresponding Boolean models using CaSQ. RA_M1_macrophage.xml corresponds to the rheumatoid arthritis M1 macrophage cell type. RA_M2_macrophage.xml corresponds to the rheumatoid arthritis M2 macrophage cell type.
+**1. Molecular_interaction_maps_XML_format folder**: contains the XML files of the molecular interaction maps used to generate the corresponding Boolean models using CaSQ. RA_M1_macrophage.xml corresponds to the rheumatoid arthritis M1 macrophage cell type. RA_M2_macrophage.xml corresponds to the rheumatoid arthritis M2 macrophage cell type.
 The XML files are converted to JSON files using the following command `casq -b -g 1 $XML_file_name $JSON_file_name`
 example: 
 `casq -b -g 1 RA_M1_macrophage.xml RA_M1_macrophage.json`
 
-2. GSE97779_dataset_analysis folder: contains the script and files used to analyse the GSE97779 RNA-seq dataset  
+**2. GSE97779_dataset_analysis folder**: contains the script and files used to analyse the GSE97779 RNA-seq dataset  
 - GSE97779_series_matrix, the gene expression matrix of the GSE97779 GEO dataset. 
 
 - GPL570-55999.txt,a text file that was used to annotate the genes
@@ -22,7 +22,7 @@ example:
 
 - DEG_macrophage.xlsx, the resulting differentially expressed genes from the GSE97779 dataset
 
-3. Extract_nodes_upstream_phenotype_of_interest : The folder comprises all the files and scripts used to extract nodes that are upstrem of the phenotypes of interest in both RA_M1_macrophage and RA_M2_macrophage models. 
+**3. Extract_nodes_upstream_phenotype_of_interest** : The folder comprises all the files and scripts used to extract nodes that are upstrem of the phenotypes of interest in both RA_M1_macrophage and RA_M2_macrophage models. 
 
 - M1_model_export_upstream_phenotype_of_interest.sbml and M2_model_export_upstream_phenotype_of_interest.sbml are the SBML files that correspond to the submodules upstream of the phenotypes of interest in both RA M1 macrophage and RA M2 macrophage models respectively.
 Both files were generated using CaSQ export option using the following command:
@@ -36,7 +36,7 @@ example:
 
 - M1_macrophage_nodes_upstream_phenotypes_in_json.csv and M2_macrophage_nodes_upstream_phenotypes_in_json.csv are the resulting files from the extraction process performed using Extract_nodes_upstream_phenotypes_of_interest.py file. They contain the list of nodes that are upstrem of the phenotypes of interest in both RA_M1_macrophage and RA_M2_macrophage models respectively in the JSON format.
 
-4. Attractors_search : This folder contains all the files needed to run the attractors search for both RA M1 macrophage and RA M2 macrophage models and filter the resulting attractors to keep the stable states only.
+**4.Attractors_search**: This folder contains all the files needed to run the attractors search for both RA M1 macrophage and RA M2 macrophage models and filter the resulting attractors to keep the stable states only.
 
 - BioCheckConsoleMulti.zip is the prototype of the BMA console tool based on the open source .NET core 3.1 which can be built using the dotnet SDK.
 
@@ -52,7 +52,7 @@ To do this, you just need to run the Repository_preparation.txt file using the f
 `sh Repository_preparation.txt`
 - Attractors_filtering.py is a Python script to filer the resulting attractors to keep the stable states only.
 
-5. Attractors_filtering_based_on_similarity_scores folder: it contains all the files and scripts used to select the stable states with the highest similarity scores and to compute their average vector.
+**5. Attractors_filtering_based_on_similarity_scores folder**: it contains all the files and scripts used to select the stable states with the highest similarity scores and to compute their average vector.
 
 - M1_nodes_after_upstream_export_with_known_value_literature.csv and M2_nodes_after_upstream_export_with_known_value_literature.csv are csv files containing the nodes upstream of the phenotype of interest that are associated with observed Boolean values collected from the literature or/and dataset analysis. These observed values are used to calculate the similarity between the resulting stable states and prior knowledge
 
@@ -64,6 +64,8 @@ To do this, you just need to run the Repository_preparation.txt file using the f
 
 - M1_occurence_per_node_in_fixpoints_with_max_similarity_on_nodes.csv and M2_occurence_per_node_in_fixpoints_with_max_similarity_on_nodes.csv files correspond to the calibrated state for both RA_M1_macrophage and RA_M2_macrophage models respectively.
 
+6. In_silico_simulations : it contains scripts and files used to perform in silico simulations on the calibrated RA M1 macrophage and RA M2 macrophage models. First you need to unzip the BMA.zip file. It contains the calibrated JSON files of the models and the console tool. Python scripts are used to run the simulations using BMA: Simulations_with_console_tool_one_by_one.py runs the mono drug simulations while Simulations_with_console_tool_two_by_two.py runs the combined drugs simulations.
+The R scripts are used to analyze the simulations results : One_by_one_drugs_simulations_analysis.R identifies the perturbed nodes at each mono drug simulation, Two_by_two_drugs_simulations_analysis.R identifies the drug pairs that reverse macrophages' phenotypes. 
 
 
 
