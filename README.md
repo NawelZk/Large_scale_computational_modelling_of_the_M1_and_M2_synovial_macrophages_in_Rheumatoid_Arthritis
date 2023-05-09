@@ -64,7 +64,7 @@ To do this, you just need to run the Repository_preparation.txt file using the f
 
 - M1_occurence_per_node_in_fixpoints_with_max_similarity_on_nodes.csv and M2_occurence_per_node_in_fixpoints_with_max_similarity_on_nodes.csv files correspond to the calibrated state for both RA_M1_macrophage and RA_M2_macrophage models respectively.
 
-6. In_silico_simulations : it contains scripts and files used to perform in silico simulations on the calibrated RA M1 macrophage and RA M2 macrophage models. First you need to unzip the BMA.zip file. It contains the calibrated JSON files of the models and the console tool. Python scripts are used to run the simulations using BMA: Simulations_with_console_tool_one_by_one.py runs the mono drug simulations while Simulations_with_console_tool_two_by_two.py runs the combined drugs simulations.
+**6. In_silico_simulations** : it contains scripts and files used to perform in silico simulations on the calibrated RA M1 macrophage and RA M2 macrophage models. First you need to unzip the BMA.zip file. It contains the calibrated JSON files of the models and the console tool. Python scripts are used to run the simulations using BMA: Simulations_with_console_tool_one_by_one.py runs the mono drug simulations while Simulations_with_console_tool_two_by_two.py runs the combined drugs simulations.
 The R scripts are used to analyze the simulations results : One_by_one_drugs_simulations_analysis.R identifies the perturbed nodes at each mono drug simulation, Two_by_two_drugs_simulations_analysis.R identifies the drug pairs that reverse macrophages' phenotypes. 
 
 
