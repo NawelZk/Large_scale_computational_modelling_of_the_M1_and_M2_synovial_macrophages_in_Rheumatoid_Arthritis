@@ -1,4 +1,4 @@
-# A computational framework to build and calibrate large-scale Boolean models
+# Large scale computational modelling of the M1 and M2 synovial macrophages in Rheumatoid Arthritis
 
 - In this directory, you will find all the files and scripts used to generate and calibrate the RA M1 and M2 macrophage models using prior knowledge and RNA-seq data analysis.
 
